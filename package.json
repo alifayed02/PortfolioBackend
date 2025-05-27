@@ -1,0 +1,19 @@
+{
+  "name": "portfolio_backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alifayed02/PortfolioBackend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alifayed02/PortfolioBackend/issues"
+  },
+  "homepage": "https://github.com/alifayed02/PortfolioBackend#readme"
+}
