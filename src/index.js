@@ -13,9 +13,9 @@ const PORT = process.env.PORT || 3001;
 // Determine if we're in production
 const isProduction = process.env.NODE_ENV === 'production';
 
-// Set FRONTEND_URL based on environment
+// Set FRONTEND_URL based on environment and remove trailing slash
 const frontendUrl = isProduction 
-    ? process.env.FRONTEND_URL 
+    ? process.env.FRONTEND_URL?.replace(/\/$/, '') || 'https://portfolio-zeta-ashy-87.vercel.app'
     : 'http://localhost:3000';
 
 app.use(helmet());
