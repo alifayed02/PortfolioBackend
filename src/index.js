@@ -10,10 +10,18 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+// Determine if we're in production
+const isProduction = process.env.NODE_ENV === 'production';
+
+// Set FRONTEND_URL based on environment
+const frontendUrl = isProduction 
+    ? process.env.FRONTEND_URL 
+    : 'http://localhost:3000';
+
 app.use(helmet());
 
 app.use(cors({
-    origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+    origin: frontendUrl,
     credentials: true,
 }));
 
@@ -40,4 +48,6 @@ app.listen(PORT, (err) => {
         process.exit(1);
     }
     console.log(`Running on Port ${PORT}`);
+    console.log(`Environment: ${isProduction ? 'Production' : 'Development'}`);
+    console.log(`CORS origin set to: ${frontendUrl}`);
 });
